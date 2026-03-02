@@ -1,3 +1,11 @@
+/* Proměnné */
+:root {
+    --accent-color: #ec9706;
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400;700&display=swap');
+
 /* Reset a základní nastavení */
 * {
     box-sizing: border-box;
@@ -14,7 +22,7 @@ body {
 
 /* Typografie */
 h1, h2, h3 {
-    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-family: 'Anton', 'Arial Black', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 1rem;
@@ -23,13 +31,13 @@ h1, h2, h3 {
 
 h1 {
     font-size: 3rem;
-    border-bottom: 4px solid #ff0000; /* Červené podtržení */
+    border-bottom: 4px solid var(--accent-color); /* Červené podtržení */
     display: inline-block;
     padding-bottom: 5px;
 }
 
 .red-text {
-    color: #ff0000;
+    color: var(--accent-color);
 }
 
 /* Header */
@@ -40,7 +48,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    border-bottom: 2px solid #ff0000;
+    border-bottom: 2px solid var(--accent-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -62,8 +70,8 @@ header {
 }
 
 .logo {
-    font-family: 'Impact', sans-serif;
-    font-size: 1.8rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 2.1rem;
     cursor: pointer;
     color: white;
     user-select: none;
@@ -85,18 +93,17 @@ nav {
     background-color: transparent;
     color: white;
     padding: 10px 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.5rem;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Impact', sans-serif;
     border-radius: 0; /* Ostré hrany */
     transition: color 0.3s;
 }
 
 .dropbtn:hover, .dropdown:hover .dropbtn {
-    color: #ff0000;
+    color: var(--accent-color);
 }
 
 /* Dropdown obsah */
@@ -109,7 +116,7 @@ nav {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
     z-index: 1;
     border: 1px solid #333;
-    border-top: 2px solid #ff0000;
+    border-top: 2px solid var(--accent-color);
     /* Centering relative to parent */
     left: 50%;
     transform: translateX(-50%);
@@ -131,7 +138,7 @@ nav {
 }
 
 .dropdown-content a:hover {
-    background-color: #ff0000;
+    background-color: var(--accent-color);
     color: black;
 }
 
@@ -159,7 +166,7 @@ footer {
     background-color: #000000;
     color: #888;
     padding: 30px 20px;
-    border-top: 2px solid #ff0000;
+    border-top: 2px solid var(--accent-color);
     margin-top: 60px;
     font-size: 0.9rem;
 }
@@ -181,7 +188,7 @@ footer .footer-content {
 }
 
 footer a {
-    color: #ff0000;
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: normal;
 }
@@ -223,7 +230,7 @@ footer a:hover {
         background-color: #000000;
         flex-direction: column;
         padding: 20px 0;
-        border-bottom: 2px solid #ff0000;
+        border-bottom: 2px solid var(--accent-color);
     }
 
     nav.active {
