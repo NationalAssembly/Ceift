@@ -3,9 +3,6 @@
     --accent-color: #ec9706;
 }
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400;700&display=swap');
-
 /* Reset a základní nastavení */
 * {
     box-sizing: border-box;
