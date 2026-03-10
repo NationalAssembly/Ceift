@@ -236,8 +236,13 @@ function render() {
     }
 
     if (e.url) {
-      el.addEventListener('click', () => { window.location.href = e.url; });
-    }
+  el.addEventListener('click', () => {
+    window.parent.postMessage({
+      type: "navigate",
+      page: e.url
+    }, "*");
+  });
+}
 
     el.addEventListener('mouseenter', ev => showTip(e, ev));
     el.addEventListener('mousemove',  ev => moveTip(ev));

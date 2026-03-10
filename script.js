@@ -60,7 +60,7 @@ function loadContent() {
   notifyTimeline(lang);
 
   // Build file path
-  const file = `${lang}/${page}.html`;
+  const file = `${lang}/${page}`;
 
   fetch(file)
     .then((r) => {
@@ -160,4 +160,13 @@ function setupNavigation() {
       document.querySelectorAll(".dropdown-content").forEach(c => c.classList.remove("show"));
     }
   });
+
+  window.addEventListener("message", function(event) {
+  if (!event.data) return;
+
+  if (event.data.type === "navigate") {
+    navigateTo(event.data.page);
+  }
+});
+
 }
