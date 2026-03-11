@@ -24,7 +24,7 @@
 
   /* ── Pozadí ── */
   --bg:           #121212;
-  --bg2:          #221800;
+  --bg2:          #121212;
   --bg3:          #6182c0;
 
   /* ── Text ── */
@@ -41,11 +41,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background-color: #121212; /* Tmavé pozadí obsahu */
   font-family: 'Crimson Pro', serif;
   min-height: 100vh;
-  cursor: url('magnifying_glass.png'), pointer;
+
 }
 body, body * {
   cursor: url('magnifying_glass.png'), pointer !important;
@@ -55,7 +54,6 @@ body, body * {
 body::before {
   content: '';
   position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }

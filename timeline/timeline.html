@@ -140,7 +140,7 @@ function render() {
   const maxTopLv = Math.max(0, ...topItems.map(p=>p.lv));
   const maxBotLv = Math.max(0, ...botItems.map(p=>p.lv));
 
-  const LABEL_H  = 55;
+  const LABEL_H  = 100;
   const topLaneH = CONN_BASE_TOP + maxTopLv * CONN_STEP + LABEL_H + 40;
   const botLaneH = CONN_BASE + maxBotLv * CONN_STEP + LABEL_H + 55;
   const axisY    = topLaneH;
@@ -330,6 +330,8 @@ window.addEventListener('message', function(event) {
 });
 
 render();
+
+
 </script>
 </body>
 </html>

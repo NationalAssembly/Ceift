@@ -59,17 +59,10 @@ header {
 /* ─── TIMELINE CONTAINER ────────────────────────────────── */
 .timeline-container {
     width: 100%;
-    background: #000;
-    border-bottom: 2px solid var(--accent-color);
+    
     overflow: hidden;
 }
 
-.timeline-container iframe {
-    border: none;
-    margin: 0;
-    width: 100%;
-    display: block;
-}
 
 /* Hamburger Menu (Mobile) */
 .hamburger {
