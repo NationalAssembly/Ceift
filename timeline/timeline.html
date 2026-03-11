@@ -212,7 +212,7 @@ function render() {
       const label = e.url ? document.createElement('a') : document.createElement('div');
       label.className = 'ev-label';
       if (e.url) { label.href = e.url; label.className += ' ev-label-link'; }
-      label.style.cssText = `top:-2px; left:4px; transform:rotate(-${ANGLE}deg); transform-origin:0% 100%;`;
+      label.style.cssText = `top:-22px; left:4px; transform:rotate(-${ANGLE}deg); transform-origin:0% 100%;`;
       label.innerHTML = wrapTitle(e.title);
       label.addEventListener('mouseenter', ev => showTip(e, ev));
       label.addEventListener('mousemove',  ev => moveTip(ev));
