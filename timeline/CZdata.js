@@ -1,7 +1,7 @@
 // CZdata.js — česky
 // country: "DE" → nad osou | "CZ" → pod osou
 const CZdata = [
-  { date: "1918-10-28", country: "CZ", title: "Vznik Československa",     url: "cz_first.html" },
+  { date: "191-10-28", country: "CZ", title: "Vznik Československa",     url: "cz_first.html" },
   { date: "1918-11-09", country: "DE", title: "Vyhlášení Výmarské rep.",  url: "de_republika.html" },
   { date: "1919-08-11", country: "DE", title: "Výmarská ústava",          url: "de_ustava.html" },
   { date: "1920-02-29", country: "CZ", title: "Ústava ČSR",               url: "cz_ustava.html" },

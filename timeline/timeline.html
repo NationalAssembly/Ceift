@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Časová osa</title>
 <link rel="stylesheet" href="timeline.css">
-<script src="CZdata.js"></script>
-<script src="DEdata.js"></script>
+<script src="data.js"></script>
+
 </head>
 <body>
 
@@ -51,12 +51,19 @@ function fmtDate(s) {
 }
 
 function getDataset() {
-  if (language === "DE") {
-    
-    return DEdata;
-  }
-  
-  return CZdata;
+  if (!data) return [];
+
+  return data.map(e => {
+    let title = e.CZtitle;
+
+    if (language === "DE") title = e.DEtitle;
+    if (language === "EN") title = e.ENtitle;
+
+    return {
+      ...e,
+      title: title
+    };
+  });
 }
 
 function wrapTitle(t) {
