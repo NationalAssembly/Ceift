@@ -3,10 +3,11 @@
 let uiTranslations = {};
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadTranslations();   // Načte JSON s překlady
-  loadContent();              // Načte hlavní obsah
-  setupNavigation();          // Nastaví menu, dropdowny a hamburger
-  setYear();                  // Aktuální rok
+  await loadTranslations();
+  loadContent();
+  setupNavigation();
+  setupTimelineCollapse();
+  setYear();
 });
 
 // --- Načtení překladů ---
@@ -38,45 +39,31 @@ function loadContent() {
   const lang = getCurrentLang();
   const page = params.get("page") || "home";
 
-  // Aktualizace tlačítka pro jazyk
   const langBtn = document.getElementById("currentLangBtn");
   if (langBtn) langBtn.textContent = lang.toUpperCase();
 
-  // Použije překlady
   applyTranslations(lang);
-
-  // Oznámení iframe časové osy
   notifyTimeline(lang);
 
-  // Snažíme se načíst soubor (fallback s .html)
   let file = `${lang}/${page}`;
   fetch(file)
-    .then(r => {
-      if (!r.ok) throw new Error("Page not found");
-      return r.text();
-    })
-    .catch(() => fetch(`${file}.html`).then(r => {
-      if (!r.ok) throw new Error("Page not found even with .html");
-      return r.text();
-    }))
-    .then(html => {
-      const c = document.getElementById("content");
-      if (c) c.innerHTML = html;
-    })
-    .catch(() => {
-      const c = document.getElementById("content");
-      if (c) c.innerHTML = "<h1>404 - Content not found</h1>";
-    });
+    .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+    .catch(() => fetch(`${file}.html`).then(r => { if (!r.ok) throw new Error(); return r.text(); }))
+    .then(html => { const c = document.getElementById("content"); if (c) c.innerHTML = html; })
+    .catch(() => { const c = document.getElementById("content"); if (c) c.innerHTML = "<h1>404 - Content not found</h1>"; });
+    // Po nastavení jazyka a stránky:
+const container = document.querySelector('.timeline-container');
+if (container) {
+  container.classList.toggle('timeline-expanded', page === 'home');
 }
 
-// --- Aplikace překladů na elementy ---
+}
+
+// --- Aplikace překladů ---
 function applyTranslations(lang) {
-  const elements = document.querySelectorAll('[data-i18n]');
-  elements.forEach(el => {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (uiTranslations[lang] && uiTranslations[lang][key]) {
-      el.textContent = uiTranslations[lang][key];
-    }
+    if (uiTranslations[lang]?.[key]) el.textContent = uiTranslations[lang][key];
   });
 }
 
@@ -84,7 +71,6 @@ function applyTranslations(lang) {
 function notifyTimeline(lang) {
   const frame = document.getElementById('timelineFrame');
   if (!frame) return;
-
   const msg = { type: 'setLanguage', lang: lang.toUpperCase() };
   try { frame.contentWindow.postMessage(msg, '*'); } catch(e) {}
   frame.addEventListener('load', function onLoad() {
@@ -106,13 +92,13 @@ function switchLanguage(newLang) {
   window.location.search = `?lang=${newLang}&page=${page}`;
 }
 
-// --- Nastavení aktuálního roku ve footeru ---
+// --- Aktuální rok ---
 function setYear() {
   const yearSpan = document.getElementById("currentYear");
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 }
 
-// --- Nastavení navigace a dropdownů ---
+// --- Navigace a dropdowny ---
 function setupNavigation() {
   const hamburger = document.getElementById("hamburgerBtn");
   const nav = document.getElementById("mainNav");
@@ -134,13 +120,10 @@ function setupNavigation() {
 
     button.addEventListener("click", e => {
       e.stopPropagation();
-      const isOpen = content.classList.contains("show");
-
       if (!isMobile) {
         document.querySelectorAll(".dropdown-content").forEach(c => { if (c !== content) c.classList.remove("show"); });
         document.querySelectorAll(".dropbtn").forEach(b => { if (b !== button) b.classList.remove("active"); });
       }
-
       content.classList.toggle("show");
       button.classList.toggle("active");
     });
@@ -152,13 +135,60 @@ function setupNavigation() {
       document.querySelectorAll(".dropbtn").forEach(b => b.classList.remove("active"));
     }
   });
+}
 
-  window.addEventListener("message", event => {
-    if (!event.data) return;
-    if (event.data.type === "navigate") navigateTo(event.data.page);
+// --- Zprávy od iframu ---
+let timelineAxisY = null;
+
+window.addEventListener('message', event => {
+  if (!event.data) return;
+
+  if (event.data.type === 'timelineHeight') {
+    const container = document.querySelector('.timeline-container');
+    if (container) container.style.setProperty('--tl-expanded-h', event.data.height + 'px');
+    timelineAxisY = event.data.axisY;
+    applyCollapsedOffset();
+  }
+
+  if (event.data.type === 'navigate') {
+    navigateTo(event.data.page);
+  }
+});
+
+function applyCollapsedOffset() {
+  const frame = document.getElementById('timelineFrame');
+  const container = document.querySelector('.timeline-container');
+  if (!frame || timelineAxisY === null) return;
+  if (container?.classList.contains('timeline-expanded')) {
+    frame.style.transform = 'translateY(0)'; // home — žádný posun
+    return;
+  }
+  const COLLAPSED_H = 32;
+  const offset = -(timelineAxisY - COLLAPSED_H / 2);
+  frame.style.transform = `translateY(${offset}px)`;
+}
+
+// --- Timeline collapse ---
+function setupTimelineCollapse() {
+  const container = document.querySelector('.timeline-container');
+  const frame = document.getElementById('timelineFrame');
+  if (!container || !frame) return;
+
+  container.addEventListener('mouseenter', () => {
+    if (container.classList.contains('timeline-expanded')) return; // home — ignoruj
+    frame.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
+    frame.style.transform = 'translateY(0)';
+    try { frame.contentWindow.postMessage({ type: 'setCollapsed', value: false }, '*'); } catch(e) {}
+  });
+
+  container.addEventListener('mouseleave', () => {
+    if (container.classList.contains('timeline-expanded')) return; // home — ignoruj
+    frame.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1)';
+    applyCollapsedOffset();
+    try { frame.contentWindow.postMessage({ type: 'setCollapsed', value: true }, '*'); } catch(e) {}
   });
 }
 
-// --- Globální zpřístupnění pro onclick v HTML ---
+// --- Globální přístup pro onclick v HTML ---
 window.navigateTo = navigateTo;
 window.switchLanguage = switchLanguage;

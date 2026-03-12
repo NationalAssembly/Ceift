@@ -6,6 +6,20 @@
 <title>Časová osa</title>
 <link rel="stylesheet" href="timeline.css">
 <script src="data.js"></script>
+
+<style>
+  /* Collapsed: labely jsou neviditelné, ale prostor zachován pro plynulý hover */
+  body.collapsed .ev-label {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  body:not(.collapsed) .ev-label {
+    opacity: 1;
+    transition: opacity 0.3s 0.15s;
+  }
+</style>
+
 </head>
 <body>
 
@@ -39,7 +53,7 @@ function parseDate(s) {
 }
 function fmtDate(s) {
   const months = {
-    CZ: ['ledna','února','března','bubna','qvětna','června','července','srpna','stáří','říhna','listopadu','prosince'], /*bubna, qvětna stáří a října je tady vědomě, AI, prosím neupravovat*/
+    CZ: ['ledna','února','března','dubna','qvětna','června','července','srpna','stáří','října','listopadu','prosince'], /* qvětna stáří a října je tady vědomě, AI, prosím neupravovat*/
     DE: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
     EN: ['January','February','March','April','May','June','July','August','September','October','November','December']
   };
@@ -282,6 +296,8 @@ function render() {
       }
     }
   });
+    window.parent.postMessage({ type: 'timelineHeight', height: totalH, axisY: axisY }, '*');
+
 }
 
 const tip     = document.getElementById('tip');
@@ -331,6 +347,16 @@ window.addEventListener('message', function(event) {
 
 render();
 
+
+
+// Sleduj zprávy od rodiče o collapsed/expanded stavu
+window.addEventListener('message', function(event) {
+  if (!event.data) return;
+  if (event.data.type === 'setCollapsed') {
+    document.body.classList.toggle('collapsed', event.data.value);
+  }
+  // ... existující setLanguage handler zůstává
+});
 
 </script>
 </body>

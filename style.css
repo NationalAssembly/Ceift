@@ -57,12 +57,27 @@ header {
 
 
 /* ─── TIMELINE CONTAINER ────────────────────────────────── */
+/* ─── TIMELINE CONTAINER ────────────────────────────────── */
 .timeline-container {
     width: 100%;
-    
     overflow: hidden;
+    height: 32px;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-bottom: 2px solid var(--accent-color);
 }
 
+.timeline-container:hover,
+.timeline-container.timeline-expanded {
+    height: var(--tl-expanded-h, 300px);
+}
+
+.timeline-container iframe {
+    width: 100%;
+    height: var(--tl-expanded-h, 300px);
+    border: none;
+    display: block;
+}
 
 /* Hamburger Menu (Mobile) */
 .hamburger {

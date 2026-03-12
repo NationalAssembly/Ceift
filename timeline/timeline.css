@@ -17,10 +17,10 @@
   --top-color-glow:  rgba(236, 151, 6, 0.25);
 
   /* ── Barvy dolní poloviny (CZ) ── */
-  --bot-color:       #3806ec;
-  --bot-color-light: #6248f5;
-  --bot-color-dark:  #5204b8;
-  --bot-color-glow:  rgba(125, 6, 236, 0.25);
+  --bot-color:       #ec9706;
+  --bot-color-light: #f5bc48;
+  --bot-color-dark:  #b87004;
+  --bot-color-glow:  rgba(236, 151, 6, 0.25);
 
   /* ── Pozadí ── */
   --bg:           #121212;
@@ -29,8 +29,8 @@
 
   /* ── Text ── */
   --text:         #f5e8cc;
-  --text-mid:     #c8a85a;
-  --text-faint:   #7a6030;
+  --text-mid:     #ffffff;
+  --text-faint:   #ffffff;
 
   /* ── Osa & linie ── */
   --axis:         #ec9706;
