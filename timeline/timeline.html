@@ -28,7 +28,6 @@
 <div class="fade-r"></div>
 
 <div class="tooltip" id="tip">
-  <div class="tt-date" id="tipDate"></div>
   <div class="tt-desc" id="tipDesc"></div>
 </div>
 
@@ -304,12 +303,10 @@ function render() {
 }
 
 const tip     = document.getElementById('tip');
-const tipDate = document.getElementById('tipDate');
 const tipDesc = document.getElementById('tipDesc');
 
 function showTip(e, ev) {
-  tipDate.textContent = fmtDate(e.date);
-  tipDesc.textContent = e.desc || '';
+  tipDesc.innerHTML = e.desc || '';
   tipDesc.style.display = e.desc ? '' : 'none';
   tip.classList.remove('de', 'cz');
   tip.classList.add('vis', e.country === 'CZ' ? 'cz' : 'de');
