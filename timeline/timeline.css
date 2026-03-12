@@ -23,8 +23,8 @@
   --bot-color-glow:  rgba(236, 151, 6, 0.25);
 
   /* ── Pozadí ── */
-  --bg:           #121212;
-  --bg2:          #121212;
+  --bg:           #000000;
+  --bg2:          #000000;
   --bg3:          #6182c0;
 
   /* ── Text ── */
@@ -41,7 +41,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background-color: #121212; /* Tmavé pozadí obsahu */
+  background-color: #000000; /* Tmavé pozadí obsahu */
   font-family: 'Crimson Pro', serif;
   min-height: 100vh;
 

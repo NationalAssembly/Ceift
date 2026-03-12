@@ -110,24 +110,28 @@ function render() {
   const allPlaced = [];
   const segmentStarts = {};
 
-  years.forEach(y => {
-    const evts = byYear[y];
-    const uniqueDates = [...new Set(evts.map(e => e.date))].sort();
-    const n = uniqueDates.length;
+years.forEach(y => {
+  const evts = byYear[y];
+  const uniqueDates = [...new Set(evts.map(e => e.date))].sort();
+  const n = uniqueDates.length;
 
-    const segLineStart = cursor + YEAR_W;
-    segmentStarts[y] = segLineStart;
-    const segLineLen  = (n + 1.2) * EV_SPACING;
+  const segLineStart = cursor + YEAR_W;
+  segmentStarts[y] = segLineStart;
+  const segLineLen  = (n + 1.2) * EV_SPACING;
 
-    uniqueDates.forEach((date, i) => {
-      const x = segLineStart + (i + 1) * EV_SPACING;
-      evts.filter(e => e.date === date).forEach(e => {
-        allPlaced.push({ e, x, year: y });
-      });
+  uniqueDates.forEach((date, i) => {
+    const sameDay = evts.filter(e => e.date === date);
+    const count = sameDay.length;
+    sameDay.forEach((e, j) => {
+      // Rozesadit kolem středu: -0.5, +0.5 pro 2 události; -1, 0, +1 pro 3 atd.
+      const offset = (j - (count - 1) / 2) * EV_SPACING;
+      const x = segLineStart + (i + 1) * EV_SPACING + offset;
+      allPlaced.push({ e, x, year: y });
     });
-
-    cursor += YEAR_W + segLineLen;
   });
+
+  cursor += YEAR_W + segLineLen;
+});
 
   const totalW = cursor + 20;
 
