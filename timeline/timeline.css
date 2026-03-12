@@ -157,6 +157,7 @@ body::before {
 .fade-l, .fade-r {
   position: fixed; top: 0; bottom: 0; width: 50px;
   pointer-events: none; z-index: 6;
+  display: none;
 }
 .fade-l { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
 .fade-r { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
