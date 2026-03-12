@@ -47,7 +47,7 @@ body {
 
 }
 body, body * {
-  cursor: url('magnifying_glass.png'), pointer !important;
+  cursor: url('magnifying_glass.png')20 22 , pointer !important;
 }
 
 /* Paper/noise texture overlay */
@@ -112,7 +112,6 @@ header p {
   position: relative; z-index: 5;
   overflow-x: auto;
   overflow-y: hidden;
-  cursor: url('magnifying_glass.png'), pointer;
   user-select: none;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-dark) var(--bg2);
@@ -167,7 +166,6 @@ header p {
 .ev {
   position: absolute;
   z-index: 4;
-  cursor: url('magnifying_glass.png'), pointer;
   transform: translateX(-50%);
 }
 

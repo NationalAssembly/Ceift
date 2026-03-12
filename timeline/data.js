@@ -1,7 +1,7 @@
 /*title má být pro všechny jazyky co nejkratší description může být dlouhý*/ 
 
 const data = [
-  { date:"1907-01-01", country:"CZ", CZtitle:"vol. právo mužů", CZdescription:"Všeobecné a rovné volební právo mužů", DEtitle:"Wahlrecht Männer", DEdescription:"Allgemeines gleiches Wahlrecht für Männer", ENtitle:"male suffrage", ENdescription:"Universal and equal voting rights for men" },
+  { date:"1907-01-01", country:"CZ", CZtitle:"vol. právo mužů", CZdescription:"Všeobecné a rovné volební právo mužů", DEtitle:"Wahlrecht Männer", DEdescription:"Allgemeines gleiches Wahlrecht für Männer", ENtitle:"male suffrage", ENdescription:"Universal and equal voting rights for men", url:"krasomira" },
   { date:"1917-01-01", country:"CZ", CZtitle:"zrušení polit. procesů", CZdescription:"Zrušení politických procesů", DEtitle:"Aufhebung politischer Prozesse", DEdescription:"Aufhebung der politischen Prozesse", ENtitle:"abolition of political trials", ENdescription:"Abolition of political trials" },
   { date:"1918-10-28", country:"CZ", CZtitle:"vznik ČSR", CZdescription:"Vznik Československé republiky", DEtitle:"Gründung der ČSR", DEdescription:"Gründung der Tschechoslowakischen Republik", ENtitle:"Czechoslovakia formed", ENdescription:"Creation of Czechoslovak Republic" },
   { date:"1918-11-13", country:"CZ", CZtitle:"prozatimní ústava", CZdescription:"Schválení prozatímní ústavy, vol. právo žen", DEtitle:"Provisorische Verfassung", DEdescription:"Verabschiedung der provisorischen Verfassung, Wahlrecht für Frauen", ENtitle:"provisional constitution", ENdescription:"Approval of provisional constitution, women's suffrage" },
