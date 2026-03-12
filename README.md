@@ -5,7 +5,6 @@
 - `index.html` – main page
     - what the website is about
     - German podcast
-    - Czech podcast
     - why they were created, about Freedom project, who we are
 - Germany
     - about National Assembly
@@ -28,7 +27,6 @@
 - `index.html` – hlavní stránka
     - co to je za web
     - podcast německý
-    - podcast český
     - proč vznikly, o Freedom projektu, kdo jsme
 - Německo
     - o National Assembly
@@ -51,7 +49,6 @@
 - `index.html` – Hauptseite
     - worum es auf der Website geht
     - deutscher Podcast
-    - tschechischer Podcast
     - warum sie entstanden sind, über das Freedom-Projekt, wer wir sind
 - Deutschland
     - über die Nationalversammlung
