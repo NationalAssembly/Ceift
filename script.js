@@ -49,7 +49,10 @@ function loadContent() {
   fetch(file)
     .then(r => { if (!r.ok) throw new Error(); return r.text(); })
     .catch(() => fetch(`${file}.html`).then(r => { if (!r.ok) throw new Error(); return r.text(); }))
-    .then(html => { const c = document.getElementById("content"); if (c) c.innerHTML = html; })
+    .then(html => { const c = document.getElementById("content"); if (c) {
+    c.innerHTML = html;
+    parseSourceLinks(c);  // ← přidej tento řádek
+  } })
     .catch(() => { const c = document.getElementById("content"); if (c) c.innerHTML = "<h1>404 - Content not found</h1>"; });
     // Po nastavení jazyka a stránky:
 const container = document.querySelector('.timeline-container');
@@ -192,3 +195,66 @@ function setupTimelineCollapse() {
 // --- Globální přístup pro onclick v HTML ---
 window.navigateTo = navigateTo;
 window.switchLanguage = switchLanguage;
+
+function parseSourceLinks(container) {
+  if (!container) return;
+
+  let linkCounter = 0;
+  const footnotes = [];
+
+  // Projdi všechny textové uzly
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+
+  nodes.forEach(node => {
+    const text = node.textContent;
+    const regex = /(https?:\/\/\S+)\s+\[([^\]]+)\]/g;
+    let match;
+    let lastIndex = 0;
+    const parts = [];
+
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) parts.push(document.createTextNode(text.slice(lastIndex, match.index)));
+      linkCounter++;
+      const url = match[1];
+      const label = match[2];
+      footnotes.push({ n: linkCounter, url, label });
+
+      const sup = document.createElement('sup');
+      const a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.title = label;
+      a.className = 'source-link';
+      a.textContent = linkCounter;
+      sup.appendChild(a);
+      parts.push(sup);
+      lastIndex = match.index + match[0].length;
+    }
+
+    if (parts.length > 0) {
+      if (lastIndex < text.length) parts.push(document.createTextNode(text.slice(lastIndex)));
+      const frag = document.createDocumentFragment();
+      parts.forEach(p => frag.appendChild(p));
+      node.parentNode.replaceChild(frag, node);
+    }
+  });
+
+  // Přidej seznam zdrojů na konec
+  if (footnotes.length > 0) {
+    const sourcesList = document.createElement('div');
+    sourcesList.className = 'sources-list';
+    const title = document.createElement('div');
+    title.className = 'sources-title';
+    title.textContent = 'Zdroje';
+    sourcesList.appendChild(title);
+    footnotes.forEach(f => {
+      const item = document.createElement('div');
+      item.className = 'sources-item';
+      item.innerHTML = `<span class="sources-n">${f.n}</span><a href="${f.url}" target="_blank">${f.label}</a>`;
+      sourcesList.appendChild(item);
+    });
+    container.appendChild(sourcesList);
+  }
+}
