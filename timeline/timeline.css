@@ -21,8 +21,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
 }
+
 body {
-  cursor: url('magnifying_glass.png') 20 22, pointer;
+  cursor: inherit;
 }
 
 /* Paper/noise texture overlay */
@@ -88,10 +89,19 @@ body::before {
 }
 
 /* ─── EVENT ELEMENTS ────────────────────────────────────── */
+.ev,
+.ev-label,
+.ev-label-link,
+.ev-dot,
+.ev-line {
+    cursor: inherit !important;
+}
+
 .ev {
   position: absolute;
   z-index: 4;
   transform: translateX(-50%);
+
 }
 
 .ev-line {
@@ -162,5 +172,10 @@ body::before {
 .fade-l { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
 .fade-r { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
 
-.tl-wrap { overflow-x: auto; overflow-y: hidden; position: relative; white-space: nowrap; cursor: url('magnifying_glass.png'), pointer; }
-.tl-inner { position: relative; }
+.tl-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  white-space: nowrap;
+  cursor: inherit;
+}

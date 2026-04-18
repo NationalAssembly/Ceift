@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupNavigation();
   setupTimelineCollapse();
   setYear();
+    await loadCursors();          // ← přidat
 });
 
 // --- Načtení překladů ---
@@ -102,10 +103,12 @@ function setYear() {
 }
 
 // --- Navigace a dropdowny ---
+// --- Navigace a dropdowny ---
 function setupNavigation() {
   const hamburger = document.getElementById("hamburgerBtn");
   const nav = document.getElementById("mainNav");
-  const dropdowns = document.querySelectorAll(".dropdown");
+  // Vynechej cursor-switch z dropdownů!
+  const dropdowns = document.querySelectorAll("#mainNav .dropdown, .lang-switch .dropdown");
   const isMobile = window.innerWidth <= 768;
 
   if (hamburger) {
@@ -133,7 +136,7 @@ function setupNavigation() {
   });
 
   window.addEventListener("click", e => {
-    if (!e.target.closest('.dropdown')) {
+    if (!e.target.closest('.dropdown') && !e.target.closest('.cursor-switch')) {
       document.querySelectorAll(".dropdown-content").forEach(c => c.classList.remove("show"));
       document.querySelectorAll(".dropbtn").forEach(b => b.classList.remove("active"));
     }
@@ -276,3 +279,101 @@ function loadImageFromFile(){
   };
   fileReader.readAsDataURL(file);
 }
+// --- Kurzory ---
+async function loadCursors() {
+    const menu = document.getElementById("cursorMenu");
+    if (!menu) return;
+
+    try {
+        const response = await fetch("./cursors.json");
+        if (!response.ok) throw new Error("Nelze načíst cursors.json");
+        const cursors = await response.json();
+
+        menu.innerHTML = "";
+
+        cursors.forEach(folderName => {
+            const button = document.createElement("button");
+            button.className = "cursor-option";
+            button.onclick = () => selectCursor(folderName);
+
+            const img = document.createElement("img");
+            img.src = `./Cursor/${folderName}/head.png`;
+            img.alt = folderName;
+            img.className = "cursor-icon";
+
+            const label = document.createElement("span");
+            label.textContent = folderName;
+
+            button.appendChild(img);
+            button.appendChild(label);
+            menu.appendChild(button);
+        });
+
+        // Obnov uložený kurzor
+        const saved = localStorage.getItem("selectedCursor");
+        const defaultCursor = "Masarik";
+        const toApply = (saved && cursors.includes(saved)) ? saved : defaultCursor;
+
+        const btn = document.getElementById("cursorBtn");
+        if (btn) btn.textContent = toApply;
+        if (!saved) localStorage.setItem("selectedCursor", defaultCursor);
+
+        // Počkej až se iframe načte, pak teprve nastav kurzory
+        const frame = document.getElementById("timelineFrame");
+        if (frame) {
+            frame.addEventListener("load", () => applyCursor(toApply), { once: true });
+        }
+        applyCursor(toApply); // nastav i hlavní stránku hned
+
+    } catch (error) {
+        console.error("Nepodařilo se načíst kurzory:", error);
+        menu.innerHTML = "<p style='color:white;padding:8px'>Chyba načítání</p>";
+    }
+}
+
+function selectCursor(folderName) {
+    document.getElementById("cursorMenu").classList.remove("show");
+    document.getElementById("cursorBtn").textContent = folderName;
+    localStorage.setItem("selectedCursor", folderName);
+    applyCursor(folderName);
+}
+
+function applyCursor(folderName) {
+    const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
+    const cursorUrl = `${base}Cursor/${folderName}/cursor.png`;
+    const mgUrl = `${base}Cursor/${folderName}/magnifying_glass.png`;
+
+    // Hlavní kurzor
+    document.body.style.cursor = `url('${cursorUrl}') 0 0, auto`;
+
+    // Nastav do iframu – s retrym pokud ještě není připravený
+    function applyToFrame() {
+        const frame = document.getElementById("timelineFrame");
+        if (!frame?.contentDocument?.body) return;
+
+        frame.contentDocument.body.style.cursor = `url('${cursorUrl}') 0 0, auto`;
+
+        const tlWrap = frame.contentDocument.querySelector(".tl-wrap");
+        if (tlWrap) {
+            tlWrap.style.cursor = `url('${mgUrl}') 20 22, pointer`;
+        }
+    }
+
+    applyToFrame();
+
+    // Pokud iframe ještě není ready, zkus znovu po načtení
+    const frame = document.getElementById("timelineFrame");
+    if (frame) {
+        frame.addEventListener("load", applyToFrame, { once: true });
+    }
+
+    // Záloha – zkus znovu za 500ms
+    setTimeout(applyToFrame, 500);
+}
+
+function toggleCursorMenu(e) {
+    e.stopPropagation();
+    document.getElementById("cursorMenu").classList.toggle("show");
+}
+
+window.toggleCursorMenu = toggleCursorMenu;

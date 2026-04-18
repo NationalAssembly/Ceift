@@ -6,7 +6,8 @@
     "weimar": "Weimar Republic",
     "first_rep": "First Republic",
     "code": "Code",
-    "content": "Articles"
+    "content": "Articles",
+    "cursor": "Cursor"
   },
   "cz": {
     "germany": "NĚMECKO",
@@ -15,7 +16,8 @@
     "weimar": "Výmarská republika",
     "first_rep": "První republika",
     "code": "Kód",
-    "content": "Články"
+    "content": "Články",
+    "cursor": "Kurzor"
   },
   "de": {
     "germany": "DEUTSCHLAND",
@@ -24,6 +26,7 @@
     "weimar": "Weimarer Republik",
     "first_rep": "Erste Republik",
     "code": "Code",
-    "content": "Artikel"
+    "content": "Artikel",
+    "cursor": "Cursor"
   }
 }
