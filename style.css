@@ -248,7 +248,7 @@ footer a:hover {
     
     .timeline-container:hover,
     .timeline-container.timeline-expanded {
-        height: calc(var(--tl-expanded-h, 300px) / 2);
+        height: var(--tl-expanded-h, 300px);
         overflow-y: scroll;
     }
 
