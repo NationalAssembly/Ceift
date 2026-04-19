@@ -240,6 +240,12 @@ footer a:hover {
     header {
         justify-content: space-between;
     }
+    
+    .timeline-container:hover,
+    .timeline-container.timeline-expanded {
+        height: calc(var(--tl-expanded-h, 300px) / 2);
+        overflow-y: scroll;
+    }
 
     .hamburger {
         display: flex;
