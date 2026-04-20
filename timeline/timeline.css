@@ -18,7 +18,7 @@
 
 body {
   background-color: #000000; /* Tmavé pozadí obsahu */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Noto Sans', sans-serif;
   min-height: 100vh;
 }
 
@@ -178,4 +178,17 @@ body::before {
   position: relative;
   white-space: nowrap;
   cursor: inherit;
+}
+
+/* --- Vizuální úpravy pouze pro domovskou stránku --- */
+body.home-mode {
+  --bg: #121212;
+  background-color: #121212;
+}
+
+body.home-mode .tl-wrap {
+  scrollbar-width: none; /* Skryje posuvník ve Firefoxu */
+}
+body.home-mode .tl-wrap::-webkit-scrollbar {
+  display: none; /* Skryje posuvník v prohlížečích založených na Chrome/Safari */
 }

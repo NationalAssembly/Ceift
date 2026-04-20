@@ -50,17 +50,68 @@ function loadContent() {
   fetch(file)
     .then(r => { if (!r.ok) throw new Error(); return r.text(); })
     .catch(() => fetch(`${file}.html`).then(r => { if (!r.ok) throw new Error(); return r.text(); }))
-    .then(html => { const c = document.getElementById("content"); if (c) {
-    c.innerHTML = html;
-    parseSourceLinks(c);  // ← přidej tento řádek
-  } })
-    .catch(() => { const c = document.getElementById("content"); if (c) c.innerHTML = "<h1>404 - Content not found</h1>"; });
-    // Po nastavení jazyka a stránky:
-const container = document.querySelector('.timeline-container');
-if (container) {
-  container.classList.toggle('timeline-expanded', page === 'home');
-}
+    .then(html => { 
+      const c = document.getElementById("content"); 
+      const tc = document.getElementById("top-content");
+      if (c) {
+        c.innerHTML = html;
+        
+        if (tc) {
+          tc.innerHTML = "";
+          if (page === "home") {
+            tc.style.display = "block";
+            tc.style.maxWidth = "1000px";
+            tc.style.margin = "40px auto 20px auto";
+            tc.style.padding = "0 20px";
+            c.style.marginTop = "20px";
+            
+            const h2s = c.querySelectorAll("h2");
+            // Najde druhý nadpis H2 ("About the Website") a vše nad ním přesune nahoru
+            const stopNode = h2s.length > 1 ? h2s[1] : null;
+            if (stopNode) {
+              while (c.firstChild && c.firstChild !== stopNode) {
+                tc.appendChild(c.firstChild);
+              }
+            }
+            parseSourceLinks(tc);
+          } else {
+            tc.style.display = "none";
+            c.style.marginTop = "40px";
+          }
+        }
+        
+        parseSourceLinks(c);
+      } 
+    })
+    .catch(() => { 
+      const c = document.getElementById("content"); 
+      const tc = document.getElementById("top-content");
+      if (tc) tc.style.display = "none";
+      if (c) {
+        c.innerHTML = "<h1>404 - Content not found</h1>"; 
+        c.style.marginTop = "40px";
+      }
+    });
 
+  // Po nastavení jazyka a stránky:
+  const container = document.querySelector('.timeline-container');
+  if (container) {
+    const isHome = (page === 'home');
+    container.classList.toggle('timeline-expanded', isHome);
+
+    const frame = document.getElementById('timelineFrame');
+    if (frame) {
+      const setFrameMode = () => {
+        try {
+          if (frame.contentDocument?.body) {
+            frame.contentDocument.body.classList.toggle('home-mode', isHome);
+          }
+        } catch(e) {}
+      };
+      setFrameMode();
+      frame.addEventListener('load', setFrameMode, { once: true });
+    }
+  }
 }
 
 // --- Aplikace překladů ---

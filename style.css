@@ -66,6 +66,11 @@ header {
     border-bottom: 2px solid var(--accent-color);
 }
 
+/* Na domovské stránce (kde je rozbaleno) skryjeme oranžový pruh */
+.timeline-container.timeline-expanded {
+    border-bottom: none;
+}
+
 .timeline-container:hover,
 .timeline-container.timeline-expanded {
     height: var(--tl-expanded-h, 300px);
