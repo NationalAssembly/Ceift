@@ -337,8 +337,8 @@ function selectCursor(folderName) {
 
 function applyCursor(folderName) {
     const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
-    const cursorUrl = `${base}Cursor/${folderName}/cursor.png`;
-    const mgUrl = `${base}Cursor/${folderName}/magnifying_glass.png`;
+    const cursorUrl = `${base}cursor/${folderName}/cursor.png`;
+    const mgUrl = `${base}cursor/${folderName}/magnifying_glass.png`;
 
     // Hlavní kurzor
     document.body.style.cursor = `url('${cursorUrl}') 0 0, auto`;
