@@ -301,7 +301,8 @@ function parseSourceLinks(container) {
     sourcesList.className = 'sources-list';
     const title = document.createElement('div');
     title.className = 'sources-title';
-    title.textContent = 'Zdroje';
+    const lang = getCurrentLang();
+    title.textContent = uiTranslations[lang]?.['sources'] || 'Sources';
     sourcesList.appendChild(title);
     footnotes.forEach(f => {
       const item = document.createElement('div');

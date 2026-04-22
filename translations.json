@@ -7,7 +7,8 @@
     "first_rep": "First Republic",
     "code": "Code",
     "content": "Articles",
-    "cursor": "Cursor"
+    "cursor": "Cursor",
+    "sources": "Sources"
   },
   "cz": {
     "germany": "NĚMECKO",
@@ -17,7 +18,8 @@
     "first_rep": "První republika",
     "code": "Kód",
     "content": "Články",
-    "cursor": "Kurzor"
+    "cursor": "Kurzor",
+    "sources": "Zdroje"
   },
   "de": {
     "germany": "DEUTSCHLAND",
@@ -27,6 +29,7 @@
     "first_rep": "Erste Republik",
     "code": "Code",
     "content": "Artikel",
-    "cursor": "Cursor"
+    "cursor": "Cursor",
+    "sources": "Quellen"
   }
 }
