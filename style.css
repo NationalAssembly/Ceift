@@ -25,7 +25,8 @@ h1, h2, h3 {
     font-family: 'Anton', 'Arial Black', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #ffffff;
 }
 
