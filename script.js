@@ -343,6 +343,28 @@ async function loadCursors() {
 
         menu.innerHTML = "";
 
+        // Přidej výchozí systémový kurzor
+        const defaultButton = document.createElement("button");
+        defaultButton.className = "cursor-option";
+        defaultButton.onclick = () => selectCursor("default");
+
+        const defaultIcon = document.createElement("span");
+        defaultIcon.className = "material-symbols-outlined";
+        defaultIcon.textContent = "arrow_selector_tool";
+        defaultIcon.style.width = "32px";
+        defaultIcon.style.height = "32px";
+        defaultIcon.style.display = "inline-flex";
+        defaultIcon.style.alignItems = "center";
+        defaultIcon.style.justifyContent = "center";
+
+        const defaultLabel = document.createElement("span");
+        const lang = getCurrentLang();
+        defaultLabel.textContent = uiTranslations[lang]?.['default'] || 'Default cursor';
+
+        defaultButton.appendChild(defaultIcon);
+        defaultButton.appendChild(defaultLabel);
+        menu.appendChild(defaultButton);
+
         cursors.forEach(folderName => {
             const button = document.createElement("button");
             button.className = "cursor-option";
@@ -364,7 +386,7 @@ async function loadCursors() {
         // Obnov uložený kurzor
         const saved = localStorage.getItem("selectedCursor");
         const defaultCursor = "Tomáš Garrigue Masaryk";
-        const toApply = (saved && cursors.includes(saved)) ? saved : defaultCursor;
+        const toApply = (saved && (saved === "default" || cursors.includes(saved))) ? saved : defaultCursor;
 
         if (!saved) localStorage.setItem("selectedCursor", defaultCursor);
 
@@ -388,6 +410,33 @@ function selectCursor(folderName) {
 }
 
 function applyCursor(folderName) {
+    // Speciální případ: výchozí systémový kurzor
+    if (folderName === "default") {
+        document.body.style.cursor = "auto";
+
+        function applyToFrame() {
+            const frame = document.getElementById("timelineFrame");
+            if (!frame?.contentDocument?.body) return;
+
+            frame.contentDocument.body.style.cursor = "auto";
+
+            const tlWrap = frame.contentDocument.querySelector(".tl-wrap");
+            if (tlWrap) {
+                tlWrap.style.cursor = "pointer";
+            }
+        }
+
+        applyToFrame();
+
+        const frame = document.getElementById("timelineFrame");
+        if (frame) {
+            frame.addEventListener("load", applyToFrame, { once: true });
+        }
+
+        setTimeout(applyToFrame, 500);
+        return;
+    }
+
     const base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
     const cursorUrl = `${base}cursor/${folderName}/cursor.png`;
     const mgUrl = `${base}cursor/${folderName}/magnifying_glass.png`;

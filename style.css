@@ -450,6 +450,16 @@ p {
     color: black;
 }
 
+.cursor-option .material-symbols-outlined {
+    width: 32px;
+    height: 32px;
+    display: inline-block !important;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .cursor-icon {
     width: 32px;
     height: 32px;

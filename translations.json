@@ -8,6 +8,7 @@
     "code": "Code",
     "content": "Articles",
     "cursor": "Cursor",
+    "default": "Default cursor",
     "sources": "Sources"
   },
   "cz": {
@@ -19,6 +20,7 @@
     "code": "Kód",
     "content": "Články",
     "cursor": "Kurzor",
+    "default": "Výchozí kurzor",
     "sources": "Zdroje"
   },
   "de": {
@@ -30,6 +32,7 @@
     "code": "Code",
     "content": "Artikel",
     "cursor": "Cursor",
+    "default": "Standardcursor",
     "sources": "Quellen"
   }
 }
