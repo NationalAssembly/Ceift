@@ -356,7 +356,8 @@ async function loadCursors() {
             img.className = "cursor-icon";
 
             const label = document.createElement("span");
-            label.textContent = folderName;
+            const lang = getCurrentLang();
+            label.textContent = uiTranslations[lang]?.[folderName] ?? folderName;
 
             button.appendChild(img);
             button.appendChild(label);

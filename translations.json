@@ -9,7 +9,8 @@
     "content": "Articles",
     "cursor": "Cursor",
     "default": "Default cursor",
-    "sources": "Sources"
+    "sources": "Sources",
+    "Classic boring": "Classic boring"
   },
   "cz": {
     "germany": "NĚMECKO",
@@ -21,7 +22,8 @@
     "content": "Články",
     "cursor": "Kurzor",
     "default": "Výchozí kurzor",
-    "sources": "Zdroje"
+    "sources": "Zdroje",
+    "Classic boring": "Klasická nuda"
   },
   "de": {
     "germany": "DEUTSCHLAND",
@@ -33,6 +35,7 @@
     "content": "Artikel",
     "cursor": "Cursor",
     "default": "Standardcursor",
-    "sources": "Quellen"
+    "sources": "Quellen",
+    "Classic boring": "Klassisch langweilig"
   }
 }
