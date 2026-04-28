@@ -391,10 +391,19 @@ function selectCursor(folderName) {
 }
 
 function applyCursor(folderName) {
+  const logo = document.querySelector('.logo');
+    if (logo) {
+        if (folderName === 'Karel Kramář') {
+            logo.classList.add('kramar-flip');
+        } else {
+            logo.classList.remove('kramar-flip');
+        }
+    }
     // Speciální případ: výchozí systémový kurzor
     if (folderName === "default") {
         document.body.style.cursor = "auto";
 
+        
         function applyToFrame() {
             const frame = document.getElementById("timelineFrame");
             if (!frame?.contentDocument?.body) return;

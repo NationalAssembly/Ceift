@@ -126,6 +126,8 @@ header {
     height: 44px;
     width: auto;
     display: block;
+     transform-style: preserve-3d;  /* ← přidat */
+    will-change: transform;        /* ← přidat */
     /* Aby obrázek ladil s oranžovým textem — filtr přebarvuje na stejný tón */
 }
 
@@ -277,6 +279,7 @@ footer a:hover {
     .logo {
         order: 2;
         margin: 0 auto; /* Center logo */
+        perspective: 400px;
     }
 
     .lang-switch {
@@ -503,4 +506,20 @@ p {
     position: absolute;
     top: 100%;
     margin-top: 8px;
+}
+@keyframes flip-logo {
+  0%   { transform: rotateY(0deg); }
+  25% { transform: rotateY(180deg); }
+    50%   { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+
+.logo.kramar-flip img {
+  /* žádná animace ve výchozím stavu */
+  transform: rotateY(0deg);
+}
+
+.logo.kramar-flip:hover img {
+  animation: flip-logo 1.6s ease forwards;
 }
