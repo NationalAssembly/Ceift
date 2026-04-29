@@ -10,7 +10,8 @@
     "cursor": "Cursor",
     "default": "Default cursor",
     "sources": "Sources",
-    "Classic boring": "Classic boring"
+    "Classic boring": "Classic boring",
+    "NULL": "DROP CURSOR"
   },
   "cz": {
     "germany": "NĚMECKO",
@@ -23,7 +24,8 @@
     "cursor": "Kurzor",
     "default": "Výchozí kurzor",
     "sources": "Zdroje",
-    "Classic boring": "Klasická nuda"
+    "Classic boring": "Klasická nuda",
+    "NULL": "DROP CURSOR"
   },
   "de": {
     "germany": "DEUTSCHLAND",
@@ -36,6 +38,7 @@
     "cursor": "Cursor",
     "default": "Standardcursor",
     "sources": "Quellen",
-    "Classic boring": "Klassisch langweilig"
+    "Classic boring": "Klassisch langweilig",
+    "NULL": "DROP CURSOR"
   }
 }
