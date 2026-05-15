@@ -14,11 +14,11 @@ const data = [
     "date": "1914-07-25",
     "country": "CZ",
     "CZtitle": "Stanné právo",
-    "CZdescription": "<i>25. července 1914</i> – vyhlášení stanného práva po atentátu v Sarajevu na následníka trůnu, omezení základních svobod a parlamentarismu",
+    "CZdescription": "<i>25. července 1914</i> – vyhlášení stanného práva po atentátu v Sarajevu na následníka trůnu; omezení občanských svobod a parlamentarismu",
     "ENtitle": "Martial Law",
-    "ENdescription": "<i>July 25, 1914</i> – declaration of martial law after the assassination of the heir to the throne in Sarajevo, restriction of basic freedoms and parliamentarism",
+    "ENdescription": "<i>July 25, 1914</i> – declaration of martial law after the assassination of the heir to the throne in Sarajevo, restriction of civil freedoms and parliamentarism",
     "DEtitle": "Standrecht",
-    "DEdescription": "25. Juli 1914 – Verkündung des Standrechts nach dem Attentat auf den Thronfolger in Sarajewo, Einschränkung der Grundfreiheiten und des Parlamentarismus",
+    "DEdescription": "25. Juli 1914 – Verkündung des Standrechts nach dem Attentat auf den Thronfolger in Sarajewo, Einschränkung der bürgerlichen Freiheiten und des Parlamentarismus",
     "url": "martial-law"
   },
   {
@@ -47,7 +47,7 @@ const data = [
     "date": "1918-11-13",
     "country": "CZ",
     "CZtitle": "Prozatímní ústava",
-    "CZdescription": "<i>13. listopad 1918</i> – schválení prozatímní ústavy (vol. právo žen)",
+    "CZdescription": "<i>13. listopadu 1918</i> – schválení prozatímní ústavy (vol. právo žen)",
     "ENtitle": "Interim Constitution",
     "ENdescription": "<i>November 13, 1918</i> – approval of the interim constitution (women's suffrage)",
     "DEtitle": "Übergangsverfassung",
@@ -58,7 +58,7 @@ const data = [
     "date": "1918-11-14",
     "country": "CZ",
     "CZtitle": "Rev. národní shromáždění",
-    "CZdescription": "<i>14. listopad 1918</i> – vznik Revolučního národního shromáždění, Masaryk prezidentem",
+    "CZdescription": "<i>14. listopadu 1918</i> – vznik Revolučního národního shromáždění, Masaryk prezidentem",
     "ENtitle": "Rev. National Assembly",
     "ENdescription": "<i>November 14, 1918</i> – establishment of the Revolutionary National Assembly, Masaryk as president",
     "DEtitle": "Rev. Nationalversammlung",
@@ -68,13 +68,35 @@ const data = [
   {
     "date": "1918-12-19",
     "country": "CZ",
-    "CZtitle": "8h pracovní doba",
-    "CZdescription": "<i>19. prosince 1918</i> – zákon o osmihodinové pracovní době",
-    "ENtitle": "8-hour Work Day",
-    "ENdescription": "<i>December 19, 1918</i> – the eight-hour working day law",
-    "DEtitle": "8-Stunden-Arbeitstag",
-    "DEdescription": "19. Dezember 1918 – Gesetz über den Achtstundentag",
-    "url": "8-hour-work-day"
+    "CZtitle": "Sociální zákony",
+    "CZdescription": "<i>19. prosince 1918</i> – zákony o 8hodinové pracovní době, pozemkové reformě, sociálním pojištění dělníků",
+    "ENtitle": "Social Laws",
+    "ENdescription": "<i>December 19, 1918</i> – laws on the 8-hour working day, land reform, and workers' social insurance",
+    "DEtitle": "Sozialgesetze",
+    "DEdescription": "19. Dezember 1918 – Gesetze über den 8-Stunden-Arbeitstag, Bodenreform und Sozialversicherung für Arbeiter",
+    "url": "social-laws"
+  },
+  {
+    "date": "1919-01-23",
+    "country": "CZ",
+    "CZtitle": "Válka o Těšínsko",
+    "CZdescription": "<i>23. ledna 1919</i> – československo-polské boje o Těšínsko (sedmidenní válka)",
+    "ENtitle": "War over Teschen",
+    "ENdescription": "<i>January 23, 1919</i> – Czechoslovak-Polish war over Teschen (seven-day war)",
+    "DEtitle": "Krieg um Teschen",
+    "DEdescription": "23. Januar 1919 – Tschechoslowakisch-polnischer Krieg um Teschen (Siebentageskrieg)",
+    "url": "war-over-teschen"
+  },
+  {
+    "date": "1919-04-27",
+    "country": "CZ",
+    "CZtitle": "Válka o Slovensko",
+    "CZdescription": "<i>27. dubna 1919</i> – maďarsko-československá válka o Slovensko",
+    "ENtitle": "War over Slovakia",
+    "ENdescription": "<i>April 27, 1919</i> – Hungarian-Czechoslovak war over Slovakia",
+    "DEtitle": "Krieg um die Slowakei",
+    "DEdescription": "27. April 1919 – Ungarisch-Tschechoslowakischer Krieg um die Slowakei",
+    "url": "war-over-slovakia"
   },
   {
     "date": "1919-06-15",
@@ -86,17 +108,6 @@ const data = [
     "DEtitle": "Kommunalwahlen",
     "DEdescription": "15. Juni 1919 – Kommunalwahlen, Frauen dürfen zum ersten Mal wählen und gewählt werden",
     "url": "local-elections-women"
-  },
-  {
-    "date": "1920-01-30",
-    "country": "CZ",
-    "CZtitle": "Pozemková reforma",
-    "CZdescription": "<i>30. ledna 1920</i> – zákon o pozemkové reformě (omezení velkostatkářství)",
-    "ENtitle": "Land Reform",
-    "ENdescription": "<i>January 30, 1920</i> – land reform law (limitation of large estates)",
-    "DEtitle": "Bodenreform",
-    "DEdescription": "30. Januar 1920 – Gesetz zur Bodenreform (Beschränkung des Großgrundbesitzes)",
-    "url": "land-reform"
   },
   {
     "date": "1920-02-29",
@@ -121,24 +132,13 @@ const data = [
     "url": "chamber-of-deputies-elections"
   },
   {
-    "date": "1921-10-22",
-    "country": "CZ",
-    "CZtitle": "Soc. pojištění dělníků",
-    "CZdescription": "<i>22. října 1921</i> – zákon o sociálním pojištění dělníků",
-    "ENtitle": "Workers' Social Insurance",
-    "ENdescription": "<i>October 22, 1921</i> – law on social insurance for workers",
-    "DEtitle": "Sozialversicherung für Arbeiter",
-    "DEdescription": "22. Oktober 1921 – Gesetz über die Sozialversicherung der Arbeiter",
-    "url": "workers-social-insurance"
-  },
-  {
     "date": "1923-03-19",
     "country": "CZ",
     "CZtitle": "Omezení extrem. stran",
     "CZdescription": "<i>19. března 1923</i> – zákon na ochranu republiky (omezení extremistických stran)",
-    "ENtitle": "Restriction of Extremist Parties",
+    "ENtitle": "Restriction of Extrem. Parties",
     "ENdescription": "<i>March 19, 1923</i> – Act for the Protection of the Republic (restriction of extremist parties)",
-    "DEtitle": "Einschränkung extremistischer Parteien",
+    "DEtitle": "Einschränkung extrem. Parteien",
     "DEdescription": "19. März 1923 – Gesetz zum Schutz der Republik (Einschränkung extremistischer Parteien)",
     "url": "restriction-of-extremist-parties"
   },
@@ -209,6 +209,17 @@ const data = [
     "url": "masaryk-death"
   },
   {
+    "date": "1938-09-12",
+    "country": "CZ",
+    "CZtitle": "Sudetoněmecké povstání",
+    "CZdescription": "<i>12. září 1938</i> – povstání sudetských Němců podporovaných nacistickým Německem",
+    "ENtitle": "Sudeten German Uprising",
+    "ENdescription": "<i>September 12, 1938</i> – uprising of Sudeten Germans supported by Nazi Germany",
+    "DEtitle": "Aufstand der Sudetendeutschen",
+    "DEdescription": "12. September 1938 – Aufstand der Sudetendeutschen, unterstützt durch Nazi-Deutschland",
+    "url": "sudeten-german-uprising"
+  },
+  {
     "date": "1938-09-23",
     "country": "CZ",
     "CZtitle": "Všeobecná mobilizace",
@@ -230,6 +241,28 @@ const data = [
     "DEdescription": "29.–30. September 1938 – Münchner Abkommen, ČSR gezwungen, das Sudetenland abzutreten, Gründung der Tschecho-Slowakischen Republik",
     "url": "munich-agreement"
   },
+  {
+    "date": "1939-03-14",
+    "country": "CZ",
+    "CZtitle": "Odtržení Slovenska",
+    "CZdescription": "<i>14. března 1939</i> – vyhlášení samostatného Slovenského štátu",
+    "ENtitle": "Secession of Slovakia",
+    "ENdescription": "<i>March 14, 1939</i> – declaration of the independent Slovak State",
+    "DEtitle": "Abspaltung der Slowakei",
+    "DEdescription": "14. März 1939 – Ausrufung des unabhängigen slowakischen Staates",
+    "url": "secession-of-slovakia"
+  },
+  {
+    "date": "1939-03-15",
+    "country": "CZ",
+    "CZtitle": "Okupace Čech a Moravy",
+    "CZdescription": "<i>15. března 1939</i> – okupace zbytku Čech a Moravy",
+    "ENtitle": "Bohemia and Moravia occupation",
+    "ENdescription": "<i>March 15, 1939</i> – occupation of the rest of Bohemia and Moravia",
+    "DEtitle": "Besetzung Böhmens und Mährens",
+    "DEdescription": "15. März 1939 – Besetzung der restlichen böhmischen und mährischen Gebiete",
+    "url": "occupation-end-of-csr"
+  },
 
 
   {
@@ -237,9 +270,9 @@ const data = [
     "country": "DE",
     "CZtitle": "Cenzura a omezení svobod",
     "CZdescription": "<i>31. července 1914</i> – cenzura tisku a omezení shromažďování po vyhlášení válečného stavu",
-    "ENtitle": "Censorship and Restriction of Freedoms",
+    "ENtitle": "Restriction of Freedoms",
     "ENdescription": "<i>July 31, 1914</i> – press censorship and restriction of assembly after the declaration of martial law",
-    "DEtitle": "Zensur und Einschränkung der Freiheiten",
+    "DEtitle": "Freiheiteneinschränkung",
     "DEdescription": "31. Juli 1914 – Pressezensur und Versammlungsbeschränkungen nach der Ausrufung des Kriegszustands",
     "url": "censorship-and-restriction-of-freedoms"
   },
@@ -261,7 +294,7 @@ const data = [
     "CZdescription": "<i>od ledna 1918</i> – masové stávky dělníků za mír a politické svobody",
     "ENtitle": "Workers' Strikes for Freedom",
     "ENdescription": "<i>From January 1918</i> – mass strikes by workers for peace and political freedoms",
-    "DEtitle": "Arbeiterstreiks für die Freiheit",
+    "DEtitle": "Arbeiterstreiks für Freiheit",
     "DEdescription": "Ab Januar 1918 – Massenstreiks der Arbeiter für Frieden und politische Freiheiten",
     "url": "workers-strikes-for-freedom"
   },
@@ -365,6 +398,39 @@ const data = [
     "url": "beer-hall-putsch"
   },
   {
+    "date": "1924-08-30",
+    "country": "DE",
+    "CZtitle": "Dawesův plán",
+    "CZdescription": "<i>30. srpna 1924</i> – Dawesův plán poskytl Německu ohromné půjčky z USA, díky nimž došlo k stabilizaci ekonomiky a oslabení nacistů",
+    "ENtitle": "Dawes Plan",
+    "ENdescription": "<i>August 30, 1924</i> – the Dawes Plan provided Germany with enormous loans from the USA, which stabilized the economy and weakened the Nazis",
+    "DEtitle": "Dawes-Plan",
+    "DEdescription": "30. August 1924 – der Dawes-Plan gewährte Deutschland enorme Kredite aus den USA, die die Wirtschaft stabilisierten und die Nazis schwächten",
+    "url": "dawes-plan"
+  },
+  {
+    "date": "1925-12-01",
+    "country": "DE",
+    "CZtitle": "Locarnské dohody",
+    "CZdescription": "<i>1. prosince 1925</i> – Locarnské dohody garantovaly neporušitelnost západních hranic Německa; východní ponechaly bez mezinárodních záruk",
+    "ENtitle": "Locarno Treaties",
+    "ENdescription": "<i>December 1, 1925</i> – the Locarno Treaties guaranteed the inviolability of Germany's western borders; eastern borders were left without international guarantees",
+    "DEtitle": "Locarno-Verträge",
+    "DEdescription": "1. Dezember 1925 – die Locarno-Verträge garantierten die Unverletztheit der Westgrenzen Deutschlands; die Ostgrenzen wurden ohne internationale Garantien belassen",
+    "url": "locarno-treaties"
+  },
+  {
+    "date": "1926-09-08",
+    "country": "DE",
+    "CZtitle": "Německo členem SN",
+    "CZdescription": "<i>8. září 1926</i> – přijetí Německa do Společnosti národů",
+    "ENtitle": "Admission to League of Nations",
+    "ENdescription": "<i>September 8, 1926</i> – admission of Germany to the League of Nations",
+    "DEtitle": "Aufnahme in den Völkerbund",
+    "DEdescription": "8. September 1926 – Aufnahme Deutschlands in den Völkerbund",
+    "url": "germany-league-of-nations"
+  },
+  {
     "date": "1932-04-01",
     "country": "DE",
     "CZtitle": "Hospodářská krize",
@@ -404,7 +470,7 @@ const data = [
     "CZdescription": "<i>28. února 1933</i> – Hindenburgův dekret o zrušení základních občanských svobod",
     "ENtitle": "Abolition of Civil Liberties",
     "ENdescription": "<i>February 28, 1933</i> – Hindenburg Decree on the abolition of fundamental civil liberties",
-    "DEtitle": "Abschaffung der bürgerlichen Freiheiten",
+    "DEtitle": "Freiheiteneinschränkung",
     "DEdescription": "28. Februar 1933 – Hindenburg-Dekret über die Aufhebung der bürgerlichen Grundrechte",
     "url": "abolition-of-civil-liberties"
   },
@@ -484,29 +550,5 @@ const data = [
     "DEtitle": "Kristallnacht",
     "DEdescription": "9.–10. November 1938 – Kristallnacht, Pogrome gegen Juden",
     "url": "kristallnacht-de"
-  },
-
-  
-  {
-    "date": "1939-03-14",
-    "country": "CZ",
-    "CZtitle": "Odtržení Slovenska",
-    "CZdescription": "<i>14. března 1939</i> – vyhlášení samostatného Slovenského štátu",
-    "ENtitle": "Secession of Slovakia",
-    "ENdescription": "<i>March 14, 1939</i> – declaration of the independent Slovak State",
-    "DEtitle": "Abspaltung der Slowakei",
-    "DEdescription": "14. März 1939 – Ausrufung des unabhängigen slowakischen Staates",
-    "url": "secession-of-slovakia"
-  },
-  {
-    "date": "1939-03-15",
-    "country": "CZ",
-    "CZtitle": "Okupace, konec ČSR",
-    "CZdescription": "<i>15. března 1939</i> – okupace zbytku Čech a Moravy, konec demokratické ČSR",
-    "ENtitle": "Occupation, end of CSR",
-    "ENdescription": "<i>March 15, 1939</i> – occupation of the rest of Bohemia and Moravia, end of democratic Czechoslovakia",
-    "DEtitle": "Besatzung, Ende der ČSR",
-    "DEdescription": "15. März 1939 – Besetzung der restlichen böhmischen und mährischen Gebiete, Ende der demokratischen ČSR",
-    "url": "occupation-end-of-csr"
   }
 ];
