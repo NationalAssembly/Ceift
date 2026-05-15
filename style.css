@@ -231,10 +231,10 @@ img, #content iframe {
 }
 
 .interreg-logo-container img {
-    height: 140px;
+    height: 93px;
     width: auto;
     background-color: white;
-    border: 10px solid white;
+    border: 7px solid white;
     margin: 0 !important;
 }
 
@@ -246,10 +246,10 @@ img, #content iframe {
 }
 
 .other-logos-container img {
-    height: 100px;
+    height: 67px;
     width: auto;
     background-color: white;
-    border: 8px solid white;
+    border: 5px solid white;
     margin: 0 !important;
     display: block !important;
 }
