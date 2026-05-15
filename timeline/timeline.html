@@ -216,7 +216,7 @@ function render() {
   function placeEv(item) {
     const { e, x, lv } = item;
     const isTop = (e.country||'DE') === 'DE';
-    const connH = (isTop ? CONN_BASE_TOP : CONN_BASE) + lv * CONN_STEP;
+    const connH = (isTop ? CONN_BASE_TOP : CONN_BASE);
 
     const el = document.createElement('div');
     el.className = `ev ${isTop ? 'top' : 'bottom'}`;
