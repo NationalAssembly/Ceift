@@ -3,34 +3,34 @@ const data = [
     "date": "1907-01-26",
     "country": "CZ",
     "CZtitle": "Volební právo mužů",
-    "CZdescription": "<i>26. ledna 1907</i> – všeobecné a rovné vol. právo mužů",
+    "CZdescription": "<i>26. ledna 1907</i> – všeobecné, tajné a rovné vol. právo (pro muže)",
     "ENtitle": "Male Suffrage",
-    "ENdescription": "<i>January 26, 1907</i> – universal and equal voting rights for men",
+    "ENdescription": "<i>January 26, 1907</i> – universal, secret and equal voting rights (for men)",
     "DEtitle": "Männerwahlrecht",
-    "DEdescription": "26. Januar 1907 – allgemeines und gleiches Wahlrecht für Männer",
+    "DEdescription": "26. Januar 1907 – allgemeines, geheimes und gleiches Wahlrecht (für Männer)",
     "url": "male-suffrage"
   },
   {
     "date": "1914-07-25",
     "country": "CZ",
     "CZtitle": "Stanné právo",
-    "CZdescription": "<i>25. července 1914</i> – vyhlášení stanného práva po atentátu na nástupce trůnu, omezení základních svobod",
+    "CZdescription": "<i>25. července 1914</i> – vyhlášení stanného práva po atentátu v Sarajevu na následníka trůnu, omezení základních svobod a parlamentarismu",
     "ENtitle": "Martial Law",
-    "ENdescription": "<i>July 25, 1914</i> – declaration of martial law after the assassination of the heir to the throne, restriction of basic freedoms",
+    "ENdescription": "<i>July 25, 1914</i> – declaration of martial law after the assassination of the heir to the throne in Sarajevo, restriction of basic freedoms and parliamentarism",
     "DEtitle": "Standrecht",
-    "DEdescription": "25. Juli 1914 – Verkündung des Standrechts nach dem Attentat auf den Thronfolger, Einschränkung der Grundfreiheiten",
+    "DEdescription": "25. Juli 1914 – Verkündung des Standrechts nach dem Attentat auf den Thronfolger in Sarajewo, Einschränkung der Grundfreiheiten und des Parlamentarismus",
     "url": "martial-law"
   },
   {
-    "date": "1917-07-02",
+    "date": "1917-05-30",
     "country": "CZ",
-    "CZtitle": "Zrušení pol. procesů",
-    "CZdescription": "<i>2. července 1917</i> – zrušení politických procesů",
-    "ENtitle": "Abolition of Political Trials",
-    "ENdescription": "<i>July 2, 1917</i> – the abolition of political trials",
-    "DEtitle": "Abschaffung politischer Prozesse",
-    "DEdescription": "2. Juli 1917 – Aufhebung politischer Prozesse",
-    "url": "abolition-of-political-trials"
+    "CZtitle": "Pol. ústupky",
+    "CZdescription": "<i>30. květen 1917</i> – obnovení parlamentarismu (Říšské rady) a zmírnění politické represe",
+    "ENtitle": "Political Concessions",
+    "ENdescription": "<i>May 30, 1917</i> – restoration of parliamentarism (Imperial Council) and relaxation of political repression",
+    "DEtitle": "Politische Zugeständnisse",
+    "DEdescription": "30. Mai 1917 – Wiederherstellung des Parlamentarismus (Reichsrat) und Lockerung der politischen Repression",
+    "url": "political-concessions"
   },
   {
     "date": "1918-10-28",
@@ -113,34 +113,12 @@ const data = [
     "date": "1920-04-18",
     "country": "CZ",
     "CZtitle": "Volby do posl. sněmovny",
-    "CZdescription": "<i>18. dubna 1920</i> – volby do poslanecké sněmovny",
+    "CZdescription": "<i>18. dubna 1920</i> – volby do poslanecké sněmovny, za týden do senátu",
     "ENtitle": "Chamber of Deputies Elections",
-    "ENdescription": "<i>April 18, 1920</i> – elections to the Chamber of Deputies",
+    "ENdescription": "<i>April 18, 1920</i> – elections to the Chamber of Deputies, Senate elections a week later",
     "DEtitle": "Abgeordnetenhauswahlen",
-    "DEdescription": "18. April 1920 – Wahlen zum Abgeordnetenhaus",
+    "DEdescription": "18. April 1920 – Wahlen zum Abgeordnetenhaus, eine Woche später Senatswahlen",
     "url": "chamber-of-deputies-elections"
-  },
-  {
-    "date": "1920-04-25",
-    "country": "CZ",
-    "CZtitle": "Volby do senátu",
-    "CZdescription": "<i>25. dubna 1920</i> – volby do senátu",
-    "ENtitle": "Senate Elections",
-    "ENdescription": "<i>April 25, 1920</i> – elections to the Senate",
-    "DEtitle": "Senatswahlen",
-    "DEdescription": "25. April 1920 – Wahlen zum Senat",
-    "url": "senate-elections"
-  },
-  {
-    "date": "1920-05-27",
-    "country": "CZ",
-    "CZtitle": "Konec Rev. nár. shrom.",
-    "CZdescription": "<i>27. května 1920</i> – konec činnosti Revolučního národního shromáždění",
-    "ENtitle": "End of Rev. National Assembly",
-    "ENdescription": "<i>May 27, 1920</i> – termination of the activities of the Revolutionary National Assembly",
-    "DEtitle": "Rev. Nationalversammlung Ende",
-    "DEdescription": "27. Mai 1920 – Ende der Tätigkeit der Revolutionären Nationalversammlung",
-    "url": "end-of-rev-national-assembly"
   },
   {
     "date": "1921-10-22",
@@ -165,6 +143,17 @@ const data = [
     "url": "restriction-of-extremist-parties"
   },
   {
+    "date": "1933-02-15",
+    "country": "CZ",
+    "CZtitle": "Hospodářská krize",
+    "CZdescription": "<i>15. února 1933</i> – vrchol hospodářské krize v ČSR",
+    "ENtitle": "Economic Crisis",
+    "ENdescription": "<i>February 15, 1933</i> – peak of economic crisis in Czechoslovakia",
+    "DEtitle": "Wirtschaftskrise",
+    "DEdescription": "15. Februar 1933 – Höhepunkt der Wirtschaftskrise in der ČSR",
+    "url": "economic-crisis-cz"
+  },
+  {
     "date": "1933-10-04",
     "country": "CZ",
     "CZtitle": "Zákaz nacistické strany",
@@ -174,6 +163,17 @@ const data = [
     "DEtitle": "Verbot der Nazipartei",
     "DEdescription": "4. Oktober 1933 – Auflösung der Nazi-Partei DNSAP in der ČSR",
     "url": "ban-on-nazi-party"
+  },
+  {
+    "date": "1935-05-16",
+    "country": "CZ",
+    "CZtitle": "Obranná smlouva s SSSR",
+    "CZdescription": "<i>16. května 1935</i> – československo-sovětská smlouva o vojenské spolupráci",
+    "ENtitle": "Soviet Defense Treaty",
+    "ENdescription": "<i>May 16, 1935</i> – Czechoslovak-Soviet treaty on military cooperation",
+    "DEtitle": "Sowjetischer Verteidigungspakt",
+    "DEdescription": "16. Mai 1935 – Tschechoslowakisch-sowjetischer Vertrag über militärische Zusammenarbeit",
+    "url": "soviet-defense-treaty"
   },
   {
     "date": "1935-12-18",
@@ -196,6 +196,39 @@ const data = [
     "DEtitle": "Staatsverteidigungsgesetz",
     "DEdescription": "13. Mai 1936 – Staatsverteidigungsgesetz (Reaktion auf die Bedrohung durch die Nazis)",
     "url": "state-defense-act"
+  },
+  {
+    "date": "1937-09-14",
+    "country": "CZ",
+    "CZtitle": "Masarykova smrt",
+    "CZdescription": "<i>14. září 1937</i> – smrt Tomáše Garrigua Masaryka",
+    "ENtitle": "Death of Masaryk",
+    "ENdescription": "<i>September 14, 1937</i> – death of Tomáš Garrigue Masaryk",
+    "DEtitle": "Masaryks Tod",
+    "DEdescription": "14. September 1937 – Tod von Tomáš Garrigue Masaryk",
+    "url": "masaryk-death"
+  },
+  {
+    "date": "1938-09-23",
+    "country": "CZ",
+    "CZtitle": "Všeobecná mobilizace",
+    "CZdescription": "<i>23. září 1938</i> – vyhlášení všeobecné mobilizace",
+    "ENtitle": "General Mobilization",
+    "ENdescription": "<i>September 23, 1938</i> – declaration of general mobilization",
+    "DEtitle": "Allgemeine Mobilisierung",
+    "DEdescription": "23. September 1938 – Ausrufung der allgemeinen Mobilisierung",
+    "url": "general-mobilization"
+  },
+  {
+    "date": "1938-09-29",
+    "country": "CZ",
+    "CZtitle": "Mnichovská dohoda",
+    "CZdescription": "<i>29.–30. září 1938</i> – Mnichovská dohoda, ČSR nucena postoupit Sudety, vznik Česko-Slovenské republiky",
+    "ENtitle": "Munich Agreement",
+    "ENdescription": "<i>September 29–30, 1938</i> – Munich Agreement, Czechoslovakia forced to cede the Sudetenland, creation of the Czecho-Slovak Republic",
+    "DEtitle": "Münchner Abkommen",
+    "DEdescription": "29.–30. September 1938 – Münchner Abkommen, ČSR gezwungen, das Sudetenland abzutreten, Gründung der Tschecho-Slowakischen Republik",
+    "url": "munich-agreement"
   },
 
 
@@ -225,11 +258,11 @@ const data = [
     "date": "1918-01-28",
     "country": "DE",
     "CZtitle": "Stávky dělníků za svobodu",
-    "CZdescription": "<i>od 28. ledna 1918</i> – masové stávky dělníků za mír a politické svobody",
+    "CZdescription": "<i>od ledna 1918</i> – masové stávky dělníků za mír a politické svobody",
     "ENtitle": "Workers' Strikes for Freedom",
-    "ENdescription": "<i>From January 28, 1918</i> – mass strikes by workers for peace and political freedoms",
+    "ENdescription": "<i>From January 1918</i> – mass strikes by workers for peace and political freedoms",
     "DEtitle": "Arbeiterstreiks für die Freiheit",
-    "DEdescription": "Ab dem 28. Januar 1918 – Massenstreiks der Arbeiter für Frieden und politische Freiheiten",
+    "DEdescription": "Ab Januar 1918 – Massenstreiks der Arbeiter für Frieden und politische Freiheiten",
     "url": "workers-strikes-for-freedom"
   },
   {
@@ -297,6 +330,50 @@ const data = [
     "DEtitle": "Betriebsräte",
     "DEdescription": "18. Januar 1920 – Betriebsrätegesetz (Arbeitnehmervertretung)",
     "url": "works-councils"
+  },
+  {
+    "date": "1923-01-11",
+    "country": "DE",
+    "CZtitle": "Okupace Porýní",
+    "CZdescription": "<i>11. ledna 1923</i> – okupace Porýní",
+    "ENtitle": "Occupation of the Rhineland",
+    "ENdescription": "<i>January 11, 1923</i> – occupation of the Rhineland",
+    "DEtitle": "Besetzung des Ruhrgebiets",
+    "DEdescription": "11. Januar 1923 – Besetzung des Ruhrgebiets",
+    "url": "occupation-rhineland"
+  },
+  {
+    "date": "1923-11-01",
+    "country": "DE",
+    "CZtitle": "Hyperinflace",
+    "CZdescription": "<i>Listopad 1923</i> – hyperinflace (vrchol)",
+    "ENtitle": "Hyperinflation",
+    "ENdescription": "<i>November 1923</i> – hyperinflation (peak)",
+    "DEtitle": "Hyperinflation",
+    "DEdescription": "November 1923 – Hyperinflation (Höhepunkt)",
+    "url": "hyperinflation"
+  },
+  {
+    "date": "1923-11-08",
+    "country": "DE",
+    "CZtitle": "Pivní puč",
+    "CZdescription": "<i>8.–9. listopadu 1923</i> – Pivní puč v Mnichově",
+    "ENtitle": "Beer Hall Putsch",
+    "ENdescription": "<i>November 8–9, 1923</i> – Beer Hall Putsch in Munich",
+    "DEtitle": "Hitlerputsch",
+    "DEdescription": "8.–9. November 1923 – Hitlerputsch in München",
+    "url": "beer-hall-putsch"
+  },
+  {
+    "date": "1932-04-01",
+    "country": "DE",
+    "CZtitle": "Hospodářská krize",
+    "CZdescription": "<i>Duben 1932</i> – vrchol hospodářské krize v Německu (6 milionů nezaměstnaných)",
+    "ENtitle": "Economic Crisis",
+    "ENdescription": "<i>April 1932</i> – peak of economic crisis in Germany (6 million unemployed)",
+    "DEtitle": "Wirtschaftskrise",
+    "DEdescription": "April 1932 – Höhepunkt der Wirtschaftskrise in Deutschland (6 Millionen Arbeitslose)",
+    "url": "economic-crisis-de"
   },
   {
     "date": "1933-01-30",
