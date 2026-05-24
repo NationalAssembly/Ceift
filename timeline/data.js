@@ -151,7 +151,7 @@ const data = [
     "ENdescription": "<i>February 15, 1933</i> – peak of economic crisis in Czechoslovakia",
     "DEtitle": "Wirtschaftskrise",
     "DEdescription": "15. Februar 1933 – Höhepunkt der Wirtschaftskrise in der ČSR",
-    "url": "economic-crisis-cz"
+    "url": "economic-crisis"
   },
   {
     "date": "1933-10-04",
