@@ -391,7 +391,7 @@ function selectCursor(folderName) {
 }
 
 function applyCursor(folderName) {
-  const logo = document.querySelector('.logo');
+    const logo = document.querySelector('.logo');
     if (logo) {
         if (folderName === 'Karel Kramář') {
             logo.classList.add('kramar-flip');
@@ -399,30 +399,32 @@ function applyCursor(folderName) {
             logo.classList.remove('kramar-flip');
         }
     }
-    // Speciální případ: výchozí systémový kurzor
-    if (folderName === "default") {
-        document.body.style.cursor = "auto";
 
-        
+    // Pomocná funkce — vloží nebo přepíše <style id="cursor-override">
+    function setCursorStyle(css) {
+        let style = document.getElementById('cursor-override');
+        if (!style) {
+            style = document.createElement('style');
+            style.id = 'cursor-override';
+            document.head.appendChild(style);
+        }
+        style.textContent = css;
+    }
+
+    if (folderName === "default") {
+        setCursorStyle(`* { cursor: auto !important; } a, button, [onclick], label { cursor: pointer !important; }`);
+
         function applyToFrame() {
             const frame = document.getElementById("timelineFrame");
             if (!frame?.contentDocument?.body) return;
-
             frame.contentDocument.body.style.cursor = "auto";
-
             const tlWrap = frame.contentDocument.querySelector(".tl-wrap");
-            if (tlWrap) {
-                tlWrap.style.cursor = "pointer";
-            }
+            if (tlWrap) tlWrap.style.cursor = "pointer";
         }
 
         applyToFrame();
-
         const frame = document.getElementById("timelineFrame");
-        if (frame) {
-            frame.addEventListener("load", applyToFrame, { once: true });
-        }
-
+        if (frame) frame.addEventListener("load", applyToFrame, { once: true });
         setTimeout(applyToFrame, 500);
         return;
     }
@@ -431,31 +433,20 @@ function applyCursor(folderName) {
     const cursorUrl = `${base}cursor/${folderName}/cursor.png`;
     const mgUrl = `${base}cursor/${folderName}/magnifying_glass.png`;
 
-    // Hlavní kurzor
-    document.body.style.cursor = `url('${cursorUrl}') 0 0, auto`;
+    // Přepíše kurzor globálně pro všechny prvky
+    setCursorStyle(`* { cursor: url('${cursorUrl}') 0 0, auto !important; }`);
 
-    // Nastav do iframu – s retrym pokud ještě není připravený
     function applyToFrame() {
         const frame = document.getElementById("timelineFrame");
         if (!frame?.contentDocument?.body) return;
-
         frame.contentDocument.body.style.cursor = `url('${cursorUrl}') 0 0, auto`;
-
         const tlWrap = frame.contentDocument.querySelector(".tl-wrap");
-        if (tlWrap) {
-            tlWrap.style.cursor = `url('${mgUrl}') 20 22, pointer`;
-        }
+        if (tlWrap) tlWrap.style.cursor = `url('${mgUrl}') 20 22, pointer`;
     }
 
     applyToFrame();
-
-    // Pokud iframe ještě není ready, zkus znovu po načtení
     const frame = document.getElementById("timelineFrame");
-    if (frame) {
-        frame.addEventListener("load", applyToFrame, { once: true });
-    }
-
-    // Záloha – zkus znovu za 500ms
+    if (frame) frame.addEventListener("load", applyToFrame, { once: true });
     setTimeout(applyToFrame, 500);
 }
 
